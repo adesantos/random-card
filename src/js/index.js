@@ -23,20 +23,23 @@ window.onload = function() {
     num = ar_num[Math.floor(Math.random() * ar_num.length)];
 
     if (icon == "&hearts;" || icon == "&diams;") {
-      html_icon[0].classList.remove("black");
-      html_icon[1].classList.remove("black");
-      html_icon[0].classList.add("red");
-      html_icon[1].classList.add("red");
-      //html_num.classList.add("red");
+      RemoveClass(html_icon, "black");
+      AddClass(html_icon, "red");
     } else {
-      html_icon[0].classList.remove("red");
-      html_icon[1].classList.remove("red");
-      html_icon[1].classList.add("black");
-      html_icon[0].classList.add("black");
-      //html_num.classList.add("black");
+      RemoveClass(html_icon, "red");
+      AddClass(html_icon, "black");
     }
     html_num.innerHTML = num;
     html_icon[0].innerHTML = icon;
     html_icon[1].innerHTML = icon;
+  }
+
+  function RemoveClass(html, color) {
+    html[0].classList.remove(color);
+    html[1].classList.remove(color);
+  }
+  function AddClass(html, color) {
+    html[0].classList.add(color);
+    html[1].classList.add(color);
   }
 };
