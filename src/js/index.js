@@ -11,7 +11,7 @@ window.onload = function() {
   });
 
   function RandomCard() {
-    var random = Math.floor(Math.random() * 11);
+    var random = Math.floor(Math.random() * 9) + 2;
     var ar_num = [random, "J", "Q", "K", "A"];
     var ar_icon = ["&hearts;", "&spades;", "&clubs;", "&diams;"];
     var html_icon = document.getElementsByClassName("icon");
@@ -34,6 +34,7 @@ window.onload = function() {
     html_icon[1].innerHTML = icon;
   }
 
+  /*Functions*/
   function RemoveClass(html, color) {
     html[0].classList.remove(color);
     html[1].classList.remove(color);
